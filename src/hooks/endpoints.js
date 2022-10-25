@@ -1,5 +1,6 @@
 export const apiEndpoints = {
   GET: {
-    getPeoplesData: "https://swapi.dev/api/people/",
+    peoplesData: "https://swapi.dev/api/people/",
+    speciesData: "https://swapi.dev/api/species/"
   },
 };

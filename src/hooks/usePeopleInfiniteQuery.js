@@ -10,7 +10,7 @@ const getPeoplesData = async (url) => {
 export const usePeopleInfiniteQuery = () => {
   const peopleQuery = useInfiniteQuery(
     "sw-people",
-    ({ pageParam = apiEndpoints["GET"]["getPeoplesData"] }) =>
+    ({ pageParam = apiEndpoints["GET"]["peoplesData"] }) =>
       getPeoplesData(pageParam),
     {
       getNextPageParam: (lastPage) => lastPage.next || undefined,
