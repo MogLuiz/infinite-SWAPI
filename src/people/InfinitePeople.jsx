@@ -9,13 +9,17 @@ const fetchUrl = async (url) => {
 };
 
 export function InfinitePeople() {
-  const { data, fetchNextPage, hasNextPage } = useInfiniteQuery(
-    "sw-people",
-    ({ pageParam = initialUrl }) => fetchUrl(pageParam),
-    {
-      getNextPageParam: (lastPage) => lastPage.next || undefined,
-    }
-  );
+  const { data, fetchNextPage, hasNextPage, isLoading, isError, error } =
+    useInfiniteQuery(
+      "sw-people",
+      ({ pageParam = initialUrl }) => fetchUrl(pageParam),
+      {
+        getNextPageParam: (lastPage) => lastPage.next || undefined,
+      }
+    );
+
+  if (isLoading) return <div className="loading">Loading...</div>;
+  if (error) return <div>Error: {error.toString()}</div>;
 
   return (
     <InfiniteScroll loadMore={fetchNextPage} hasMore={hasNextPage}>
