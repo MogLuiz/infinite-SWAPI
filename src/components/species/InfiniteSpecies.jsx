@@ -1,5 +1,5 @@
 import InfiniteScroll from "react-infinite-scroller";
-import { Species } from "./Species";
+import { Species } from "./parts/Species";
 
 const initialUrl = "https://swapi.dev/api/species/";
 const fetchUrl = async (url) => {

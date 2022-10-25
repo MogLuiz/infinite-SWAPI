@@ -1,6 +1,6 @@
 import "./App.css";
-import { InfinitePeople } from "./people/InfinitePeople";
-import { InfiniteSpecies } from "./species/InfiniteSpecies";
+import { InfinitePeople } from "./components/people/InfinitePeople";
+import { InfiniteSpecies } from "./components/species/InfiniteSpecies";
 
 function App() {
   return (
